@@ -15,6 +15,13 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def feed
+    @articles = Article.all
+    respond_to do |format|
+      format.rss { render :layout => false }
+  end
+end
+
   def create
     @article = Article.new(article_params)
 

@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get 'feed' => 'articles#feed'
+
   root 'welcome#index'
 end
